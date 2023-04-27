@@ -1,0 +1,27 @@
+server:
+  port: 8091
+
+
+spring:
+  security:
+    user:
+      name: admin
+      password: as43Erg34
+
+  application:
+    name: Admin
+
+  cloud:
+    config:
+      enabled: false
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        hostname: localhost
+        health-check-path: /health-check
+        health-check-interval: 5s
+  boot:
+    admin:
+      discovery:
+        ignored-services: consul, Admin, Gateway
